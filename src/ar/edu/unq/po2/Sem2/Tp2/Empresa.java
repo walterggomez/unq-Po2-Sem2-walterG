@@ -4,11 +4,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Empresa {
+
 	private String nombreEmpresa;
 	private String cuitEmpresa;
-	private List <Empleado> trabajadores = new ArrayList<Empleado>();
+	private List <Empleado> trabajadores;
 	
-	
+	public Empresa(String nombreEmpresa, String cuitEmpresa) {
+		super();
+		this.nombreEmpresa = nombreEmpresa;
+		this.cuitEmpresa = cuitEmpresa;
+		this.trabajadores = new ArrayList<Empleado>();
+	}
 	
 	// getters
 	public String getNombreEmpresa() {
@@ -25,35 +31,33 @@ public class Empresa {
 	
 	
 	// Metodos
+	
+	public void contratarNuevoEmpleado(Empleado empleado) {
+		this.trabajadores.add(empleado);
+		
+	}
 	public double pagoDeSueldos() { // total de sueldos netos de todos los empleados
 		double totalAPagar = 0;
 		for (Empleado empleado : trabajadores) {
-			totalAPagar = + empleado.sueldoNeto();
+			totalAPagar += empleado.sueldoNeto();
 		}
 		return totalAPagar;
 		
 	}
 	public double montoTotalDeSueldosBrutos() {
-		return 0;
+		double totalSueldosBrutos = 0;
+		for (Empleado empleado : trabajadores) {
+			totalSueldosBrutos += empleado.sueldoBruto();
+		}
+		return totalSueldosBrutos;
 	}
 	public double montoTotalDeRetenciones() {
-		return 0;
-	}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+		double totalRetenciones = 0;
+		for (Empleado empleado : trabajadores) {
+			totalRetenciones +=  empleado.retenciones();
+		}
+		return totalRetenciones;
+		}
 
 
 }
