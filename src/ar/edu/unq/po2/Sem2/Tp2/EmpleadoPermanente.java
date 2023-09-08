@@ -82,14 +82,6 @@ public class EmpleadoPermanente extends Empleado{
 	}
 
 
-
-
-
-
-
-
-
-
 	
 
 }
