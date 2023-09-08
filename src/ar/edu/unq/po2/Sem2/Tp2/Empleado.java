@@ -61,13 +61,9 @@ public abstract class Empleado {
 		Period periodo = Period.between(getFechaDeNac(),fechaHoy);
 		return periodo.getYears();
 	}
-	
-	public abstract double sueldoBruto();
-	
-	public abstract double retenciones();
-	
+
 	public double sueldoNeto() {
-		return this.sueldoBruto()-this.retenciones();
+		return this.sueldoBruto() - this.retenciones();
 	}
 
 	// Hago el supuesto que la obra social es la misma para todo empleado de la empresa
@@ -75,36 +71,9 @@ public abstract class Empleado {
 		return this.sueldoBruto() * 0.10;
 	}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+	public abstract double sueldoBruto();
 	
-	
-	
+	public abstract double retenciones();
 	
 
 }

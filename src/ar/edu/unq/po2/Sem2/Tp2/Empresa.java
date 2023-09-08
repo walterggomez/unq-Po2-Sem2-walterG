@@ -29,7 +29,6 @@ public class Empresa {
 	
 	
 	
-	
 	// Metodos
 	
 	public void contratarNuevoEmpleado(Empleado empleado) {

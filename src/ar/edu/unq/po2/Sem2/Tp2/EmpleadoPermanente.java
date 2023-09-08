@@ -67,12 +67,12 @@ public class EmpleadoPermanente extends Empleado{
 	@Override
 	public double retenciones() {
 		
-		return this.retencionObraSocial()+ this.retencionPorHijo()+this.retencionAporteJubilatorio();
+		return this.retencionObraSocial() + this.retencionPorHijo() + this.retencionAporteJubilatorio();
 	}
 	
 	
 	public double retencionAporteJubilatorio() {
-	
+
 		return this.sueldoBruto() * 0.15;
 	}
 

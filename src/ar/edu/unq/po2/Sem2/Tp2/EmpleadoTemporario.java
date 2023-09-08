@@ -34,7 +34,7 @@ public class EmpleadoTemporario extends Empleado {
 	@Override
 	public double sueldoBruto() {
 		
-		return this.getSueldoBasico()+this.sueldoPorHorasExtras();
+		return this.getSueldoBasico() + this.sueldoPorHorasExtras();
 	}
 
 	private double sueldoPorHorasExtras() {
@@ -45,8 +45,8 @@ public class EmpleadoTemporario extends Empleado {
 	@Override
 	public double retenciones() {
 		
-		return this.retencionObraSocial()+this.retencionPorMayorDe50Anios()+
-			   this.retencionAporteJubilatorio()+this.retencionPorHorasExtras();
+		return this.retencionObraSocial() + this.retencionPorMayorDe50Anios() +
+			   this.retencionAporteJubilatorio() + this.retencionPorHorasExtras();
 	}
 
 	private double retencionPorHorasExtras() {
