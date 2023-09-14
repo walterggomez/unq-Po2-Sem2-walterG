@@ -27,8 +27,6 @@ public class Empresa {
 		return cuitEmpresa;
 	}
 	
-	
-	
 	// Metodos
 	
 	public void contratarNuevoEmpleado(Empleado empleado) {
