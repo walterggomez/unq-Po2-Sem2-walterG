@@ -1,4 +1,4 @@
-package ar.edu.unq.po2.Sem2.Tp4Ej1Test;
+package ar.edu.unq.po2.Sem2.Tp4Ej2Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -34,4 +34,5 @@ class ProductoTest {
 		arroz.aumentarPrecio(1.5);
 		assertEquals(20.4, arroz.getPrecio());
 	}
+
 }

@@ -23,6 +23,25 @@ public class Supermercado {
 	public String getDireccion() {
 		return direccion;
 	}
+	public List<Producto> getMisProductos() {
+		return misProductos;
+	}
+
+		// Metodo para agregar productos al stock del supermercado
+	public void agregarProducto(Producto producto) {
+		this.misProductos.add(producto);
+	}
+
+		// Metodo para calcular la cantidad de Productos
+	public Integer getCantidadDeProductos() {
+		
+		return this.getMisProductos().size();
+	}
+
+		// Metodo para calcular el total de precios
+	public Double getPrecioTotal() {
+		return this.getMisProductos().stream().mapToDouble(p-> p.getPrecio()).sum();
+	}
 	
 			
 	

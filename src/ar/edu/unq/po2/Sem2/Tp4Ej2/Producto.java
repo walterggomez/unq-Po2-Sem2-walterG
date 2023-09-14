@@ -1,4 +1,4 @@
-package ar.edu.unq.po2.Sem2.Tp4Ej1;
+package ar.edu.unq.po2.Sem2.Tp4Ej2;
 
 public class Producto {
 	private String nombreProducto;
@@ -54,9 +54,5 @@ public class Producto {
 		this.setPrecioProducto(nuevoPrecio);		
 		
 	}
-	
-	
-	
-	
-	
+
 }
