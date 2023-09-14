@@ -58,8 +58,10 @@ public class EquipoTrabajo {
 		return this.integrantes.size();
 	}
 	
-
-
+	/* Anexo (1) */
+	/*
+	* return this.getIntegrantes().stream().mapToDouble(i->i.getEdad()).sum();
+	*/
 	
 	
 
