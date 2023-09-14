@@ -1,4 +1,4 @@
-package ar.edu.unq.po2.Sem2.Tp2;
+package ar.edu.unq.po2.Sem2.Tp2Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -7,6 +7,10 @@ import java.time.format.DateTimeFormatter;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
+import ar.edu.unq.po2.Sem2.Tp2.Empleado;
+import ar.edu.unq.po2.Sem2.Tp2.EmpleadoPermanente;
+import ar.edu.unq.po2.Sem2.Tp2.EmpleadoTemporario;
 
 class EmpleadoTest {
 	
