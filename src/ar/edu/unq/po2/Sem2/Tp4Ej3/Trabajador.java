@@ -5,17 +5,17 @@ import java.util.ArrayList;
 
 public class Trabajador {
 	private String nombre;
-	private String numeroDeLegajo;
-	private List<Ingreso> ingresosPercibidosDelAnio;
+	private int numeroDeLegajo;
+	private List<Ingreso> ingresosDelAnio;
 	
 	
 			// Constructor
 	
-	 public Trabajador(String nombre, String numeroDeLegajo) {
+	 public Trabajador(String nombre, int numeroDeLegajo) {
 		super();
 		this.nombre = nombre;
 		this.numeroDeLegajo = numeroDeLegajo;
-		this.ingresosPercibidosDelAnio = new ArrayList<Ingreso>();
+		this.ingresosDelAnio = new ArrayList<Ingreso>();
 	}
 	 
 	 		// Getters
@@ -23,16 +23,30 @@ public class Trabajador {
 		return nombre;
 	}
 
-	public String getNumeroDeLegajo() {
+	public int getNumeroDeLegajo() {
 		return numeroDeLegajo;
 	}
 
-	public List<Ingreso> getIngresosPercibidosDelAnio() {
-		return ingresosPercibidosDelAnio;
+	public List<Ingreso> getIngresosDelAnio() {
+		return ingresosDelAnio;
 	}
+	
+			// Metodo para agregar ingresos al trabajador
+	public void agregarIngresos(Ingreso ingreso) {
+		this.getIngresosDelAnio().add(ingreso);
+		
+	}
+	
 			// Protocolo
 	public double getTotalPercibido() {
-		 return 0;
+		 return this.getIngresosDelAnio().stream().mapToDouble(i->i.getMontoPercibido()).sum();
 	 }
+	
+	public double getMontoImponible() {
+		return this.getIngresosDelAnio().stream().mapToDouble(i->i.montoImponibleAlImpuesto()).sum();
+	}
+	public double getImpuestoAPagar() {
+		return this.getMontoImponible()* 0.2;
+	}
 
 }
