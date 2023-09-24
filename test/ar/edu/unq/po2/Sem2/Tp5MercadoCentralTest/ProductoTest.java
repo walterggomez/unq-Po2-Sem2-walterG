@@ -9,37 +9,37 @@ import ar.edu.unq.po2.Sem2.Tp5MercadoCentral.ProductoCooperativo;
 import ar.edu.unq.po2.Sem2.Tp5MercadoCentral.ProductoTradicional;
 
 class ProductoTest {
-	ProductoTradicional aceite;
-	ProductoCooperativo yerbaAm;
+	ProductoTradicional aceiteNatura;
+	ProductoCooperativo yerbaTresPatos;
 
 	@BeforeEach
 	void setUp() throws Exception {
-		aceite = new  ProductoTradicional ("Aceite Natura",20,300);
-		yerbaAm = new ProductoCooperativo ("Ambohe",15,250);
+		aceiteNatura = new  ProductoTradicional ("Aceite Natura",20,300);
+		yerbaTresPatos = new ProductoCooperativo ("Tres Patos",15,250,10);
 	}
 
 	@Test
 	void getNombreTest() {
-		assertEquals ("Aceite Natura",aceite.getNombre());
-		assertEquals ("Ambohe",yerbaAm.getNombre());
+		assertEquals ("Aceite Natura",aceiteNatura.getNombre());
+		assertEquals ("Tres Patos",yerbaTresPatos.getNombre());
 	}
 	@Test
 	void getCantidadEnStockTest() {
-		assertEquals (20,aceite.getCantidadEnStock());
-		assertEquals (15,yerbaAm.getCantidadEnStock());
+		assertEquals (20,aceiteNatura.getCantidadEnStock());
+		assertEquals (15,yerbaTresPatos.getCantidadEnStock());
 	}
 	@Test
 	void decrementarStockTest() {
-		aceite.decrementarStock();
-		yerbaAm.decrementarStock();
-		aceite.decrementarStock();
+		aceiteNatura.decrementarStock();
+		yerbaTresPatos.decrementarStock();
+		aceiteNatura.decrementarStock();
 		
-		assertEquals (18,aceite.getCantidadEnStock());
-		assertEquals (14,yerbaAm.getCantidadEnStock());
+		assertEquals (18,aceiteNatura.getCantidadEnStock());
+		assertEquals (14,yerbaTresPatos.getCantidadEnStock());
 	}
 	@Test
 	void getPrecioTest() {
-		assertEquals (300,aceite.getPrecio());
-		assertEquals (225,yerbaAm.getPrecio());
+		assertEquals (300,aceiteNatura.getPrecio());
+		assertEquals (225,yerbaTresPatos.getPrecio());
 	}
 }

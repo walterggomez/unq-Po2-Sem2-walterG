@@ -1,33 +1,49 @@
 package ar.edu.unq.po2.Sem2.Tp5MercadoCentral;
 
+import java.util.List;
+import java.util.ArrayList;
 
 public class Caja {
 	
 	private double montoACobrar = 0 ;
+	private List<ProductoTradicional> compra = new ArrayList<ProductoTradicional>();
 		
+	// Constructor de Caja
 	public Caja() {
 		super();
 	}
 	
-	public double getMontoACobrar() {
-		return montoACobrar;
-	}
 	
-		// Metodo para registrar un producto que se compra
-	public void registrarProducto(Producto producto) {
-		this.actualizarMontoACobrar(producto);
-		producto.decrementarStock();
+	// Metodo para agrgar productos a la compra del cliente
+	public void agregarProductoACompra(ProductoTradicional producto) {
+		this.compra.add(producto);
 		
 	}
 	
-	private void actualizarMontoACobrar(Producto producto) {
+	public double informarMontoACobrar() {
+		this.compra.clear();
+		return montoACobrar;
+	}
+
+	// Metodo que procesa la compra
+	public void procesarCompra() {
+		for (ProductoTradicional producto : compra) {
+			this.registrarProducto(producto);
+		}
+	}
+	
+	private void registrarProducto(ProductoTradicional producto) {
 		montoACobrar += producto.getPrecio();
+		producto.decrementarStock();
 	}
-	
-	public double informarMontoAlCliente() {
-		return this.getMontoACobrar();	
+
+
+	public List<ProductoTradicional> getCompra() {
+		return compra;
 	}
+
 	
+
 
 }
 

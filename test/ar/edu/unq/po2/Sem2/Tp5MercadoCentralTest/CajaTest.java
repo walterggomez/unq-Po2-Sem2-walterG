@@ -1,6 +1,7 @@
 package ar.edu.unq.po2.Sem2.Tp5MercadoCentralTest;
 
 import static org.junit.jupiter.api.Assertions.*;
+import java.util.List;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -13,27 +14,41 @@ class CajaTest {
 	
 	Caja cajaPrincipal;
 	
-	ProductoTradicional aceite;
-	ProductoCooperativo yerbaAm;
+	List<ProductoTradicional> compraDelHoy;
+	
+	ProductoTradicional aceiteNatura;
+	ProductoCooperativo yerbaTresPatos;
 	
 	@BeforeEach
 	void setUp() throws Exception {
 		cajaPrincipal = new Caja();
 		
-		aceite = new  ProductoTradicional ("Aceite Natura",20,300);
-		yerbaAm = new ProductoCooperativo ("Ambohe",15,250);
+		aceiteNatura = new  ProductoTradicional ("Aceite Natura",20,300);
+		yerbaTresPatos = new ProductoCooperativo ("Tres Patos",15,250,10);
 		
-		cajaPrincipal.registrarProducto(aceite);
-		cajaPrincipal.registrarProducto(yerbaAm);
+		cajaPrincipal.agregarProductoACompra(aceiteNatura);
+		cajaPrincipal.agregarProductoACompra(yerbaTresPatos);
+		cajaPrincipal.agregarProductoACompra(yerbaTresPatos);
+
+		cajaPrincipal.procesarCompra();
+		
 	}
 	@Test
-	void getMontoACobrarTest() {
-		assertEquals(525,cajaPrincipal.getMontoACobrar());
-	}
+	void cantidadDeProductosEnLaCompraTest() {
+		assertEquals(3,cajaPrincipal.getCompra().size());
+	}	
+	
 	@Test
-	void stockDeProductoTest() {
-		assertEquals(19,aceite.getCantidadEnStock());
-		assertEquals(14,yerbaAm.getCantidadEnStock());
+	void montoACobrarTest() {
+		assertEquals(750,cajaPrincipal.informarMontoACobrar());
+		assertEquals(0,cajaPrincipal.getCompra().size());
+		
+	}
+	// test para controlar el stock despues de la compra
+	@Test
+	void controlDeStockTest() {
+		assertEquals(19,aceiteNatura.getCantidadEnStock());
+		assertEquals(13,yerbaTresPatos.getCantidadEnStock());
 	}
 
 }
